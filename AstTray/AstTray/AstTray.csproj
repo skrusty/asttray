@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Asterisk.NET">
-      <HintPath>..\..\asternet-22067\Asterisk.2013\Asterisk.NET\bin\Debug\Asterisk.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Other\asternet-22067\Asterisk.2013\Asterisk.NET\bin\Debug\Asterisk.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
