@@ -30,20 +30,23 @@ namespace AstTray
             // Add context menu item
             var click2CallMenuItem = new ToolStripClick2Call();
             click2CallMenuItem.Call += click2CallMenuItem_Call;
-            contextMenuStrip1.Items.Add(click2CallMenuItem);
-            
+            contextMenuStrip1.Items.Insert(0, click2CallMenuItem);
+
             try
             {
                 astCon = new ManagerConnection(ConfigurationManager.AppSettings["astHost"], int.Parse(ConfigurationManager.AppSettings["astPort"]),
                     ConfigurationManager.AppSettings["astUser"], ConfigurationManager.AppSettings["astPass"]);
 
                 astCon.NewState +=astCon_NewState;
-
                 astCon.Login();
+
+                astTrayNotify.ShowBalloonTip(3000, "Connected", "Connected to Asterisk", ToolTipIcon.Info);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(string.Format("Error connecting to {0}. Error: {1}", 
+                    ConfigurationManager.AppSettings["astHost"], 
+                    ex.Message));
             }
         }
 
@@ -55,13 +58,14 @@ namespace AstTray
                 {
                     Channel = "Sip/" + ConfigurationManager.AppSettings["astExten"],
                     Exten = numberToCall,
-                    Context = "default",
+                    Context = ConfigurationManager.AppSettings["astExtenContext"],
                     Priority = 1,
                     CallerId = ConfigurationManager.AppSettings["astExten"],
                     Timeout = 30000
                 });
             }
             catch { }
+
         }
 
         private void astCon_NewState(object sender, Asterisk.NET.Manager.Event.NewStateEvent e)
@@ -77,6 +81,19 @@ namespace AstTray
                         break;
                 }
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            astCon.Logoff();
+            astCon = null;
+
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://asttray.codeplex.com");
         }
 
     }

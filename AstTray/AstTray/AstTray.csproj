@@ -36,8 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Asterisk.NET">
-      <HintPath>..\..\asternet-22067\Asterisk.2013\Asterisk.NET\bin\Debug\Asterisk.NET.dll</HintPath>
+    <Reference Include="Asterisk.NET, Version=1.6.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\BusiboxTFS\Busibox Internal Projects\BusiboxSystems\Asterisk.NET.1.6.2.0\Asterisk.NET\bin\Debug\Asterisk.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

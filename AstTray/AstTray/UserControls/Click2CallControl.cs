@@ -24,6 +24,9 @@ namespace AstTray.UserControls
         {
             if (Call != null)
                 Call(this.comboBox1.Text);
+
+            // Add to call history
+            this.comboBox1.Items.Add(this.comboBox1.Text);
         }
     }
 
