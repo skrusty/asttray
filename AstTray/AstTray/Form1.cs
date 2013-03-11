@@ -30,23 +30,20 @@ namespace AstTray
             // Add context menu item
             var click2CallMenuItem = new ToolStripClick2Call();
             click2CallMenuItem.Call += click2CallMenuItem_Call;
-            contextMenuStrip1.Items.Insert(0, click2CallMenuItem);
-
+            contextMenuStrip1.Items.Add(click2CallMenuItem);
+            
             try
             {
                 astCon = new ManagerConnection(ConfigurationManager.AppSettings["astHost"], int.Parse(ConfigurationManager.AppSettings["astPort"]),
                     ConfigurationManager.AppSettings["astUser"], ConfigurationManager.AppSettings["astPass"]);
 
                 astCon.NewState +=astCon_NewState;
-                astCon.Login();
 
-                astTrayNotify.ShowBalloonTip(3000, "Connected", "Connected to Asterisk", ToolTipIcon.Info);
+                astCon.Login();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Error connecting to {0}. Error: {1}", 
-                    ConfigurationManager.AppSettings["astHost"], 
-                    ex.Message));
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -80,19 +77,6 @@ namespace AstTray
                         break;
                 }
             }
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            astCon.Logoff();
-            astCon = null;
-
-            Application.Exit();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://asttray.codeplex.com");
         }
 
     }
