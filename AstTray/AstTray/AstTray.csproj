@@ -36,9 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Asterisk.NET, Version=1.6.3.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Asterisk.NET, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\BusiboxTFS\Busibox Internal Projects\BusiboxSystems\Asterisk.NET.1.6.2.0\Asterisk.NET\bin\Debug\Asterisk.NET.dll</HintPath>
+      <HintPath>..\..\..\..\CodePlex-AsterNET\asternet\Asterisk.2013\Asterisk.NET\bin\Debug\Asterisk.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -53,11 +53,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DirectoryHelpers\AstTrayDirectoryHelper.cs" />
+    <Compile Include="DirectoryHelpers\CiscoDirectoryHelper.cs" />
+    <Compile Include="DirectoryHelpers\DirectoryEntry.cs" />
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDirectoryEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectoryEditor.Designer.cs">
+      <DependentUpon>FrmDirectoryEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +79,11 @@
     <Compile Include="UserControls\ToolStripClick2Call.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDirectoryEditor.resx">
+      <DependentUpon>FrmDirectoryEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +97,7 @@
     <EmbeddedResource Include="UserControls\Click2CallControl.resx">
       <DependentUpon>Click2CallControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config.example" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

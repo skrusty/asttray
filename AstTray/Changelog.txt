@@ -1,0 +1,19 @@
+AstTray Development Change Log. For complete source, check-in history, issue tracker
+and documentation, visit: http://asttray.codeplex.com/
+
+Skrusty		11/06/2013
+	Added	Support for AMI 1.0, Asterisk 1.4
+	Added	Screen Popping
+	Added	Example Application Config file (should be renamed before compiling)
+	  -		Code Tidy up
+AdamantUK (adam@cabdespatch.com) Patch Merged
+	Added	Support for AMI 1.0, Asterisk 1.4
+	
+
+Skrusty		25/03/2013
+	Added	New config options to allow for other peer types (e.g. SIP, IAX)
+	Added	Call History
+	Added	Local Directory (with local XML store)
+	Added	Company/Shared Directory
+				* Allows for multiple formats of directory to be downloaded including: -
+					** Cisco XML Directory
