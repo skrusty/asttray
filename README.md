@@ -7,7 +7,7 @@ This is a list of the features I am adding at the moment: -
 * Screen Popping
 * Local Directory
 * Call History
-** Made, Received and Missed
+ * Made, Received and Missed
 * Shared or Company Directory
 ** XML file store, but also supports Cisco Directory XML from web resource
 !! Dependencies
