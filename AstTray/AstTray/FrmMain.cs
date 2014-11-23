@@ -1,6 +1,4 @@
-﻿using Asterisk.NET.Manager;
-using Asterisk.NET.Manager.Action;
-using AstTray.DirectoryHelpers;
+﻿using AstTray.DirectoryHelpers;
 using AstTray.UserControls;
 using System;
 using System.Collections.Generic;
@@ -9,6 +7,9 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Linq;
+using AsterNET.Manager;
+using AsterNET.Manager.Action;
+using AsterNET.Manager.Event;
 
 namespace AstTray
 {
@@ -88,7 +89,7 @@ namespace AstTray
                     Channel = ConfigurationManager.AppSettings["astPeerType"] + "/" + ConfigurationManager.AppSettings["astPeerID"],
                     Exten = numberToCall,
                     Context = ConfigurationManager.AppSettings["astExtenContext"],
-                    Priority = 1,
+                    Priority = "1",
                     CallerId = ConfigurationManager.AppSettings["astExten"],
                     Timeout = 30000
                 });
@@ -99,7 +100,7 @@ namespace AstTray
 
         #region Asterisk Events
 
-        void astCon_ConnectionState(object sender, Asterisk.NET.Manager.Event.ConnectionStateEvent e)
+        void astCon_ConnectionState(object sender, ConnectionStateEvent e)
         {
             // Connection state has changed
             if (astCon.IsConnected())
@@ -108,7 +109,7 @@ namespace AstTray
                 this.connectionStateLbl.Text = string.Format("Disconnected, reconnecting to {0}...", astCon.Hostname);
         }
  
-        private void astCon_NewState(object sender, Asterisk.NET.Manager.Event.NewStateEvent e)
+        private void astCon_NewState(object sender, NewStateEvent e)
         {
             if (e.ChannelStateDesc != null)
             {
@@ -140,7 +141,7 @@ namespace AstTray
             }
         }
 
-        private void astCon_Link(object sender, Asterisk.NET.Manager.Event.LinkEvent e)
+        private void astCon_Link(object sender, LinkEvent e)
         {
             if ((e.CallerId1 != e.CallerId2) && (e.Channel1 != e.Channel2))
             {
