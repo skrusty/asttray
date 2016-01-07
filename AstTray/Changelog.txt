@@ -1,5 +1,12 @@
 AstTray Development Change Log. For complete source, check-in history, issue tracker
 and documentation, visit: https://github.com/skrusty/asttray
+Skrusty		07/01/2016
+	Clean	Done a big code cleanup, nothing special just a quick resharper
+	Fixed	AsterNET version, now running latest from nuget
+	Fixed	Support for Asterisk 12/13
+	Change	Moved click to call to main UI
+	Change	Updated config example to include default context and removed Url's that caused errors
+	Fixed	Usage of ConnectedLineNumber etc that caused crash on originate and inbound call
 
 Skrusty		23/11/2014
 	Added	AsterNET via nuget package (1.0.0)

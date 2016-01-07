@@ -61,6 +61,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.connectionStateLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -161,7 +162,7 @@
             this.callToolStripMenuItem,
             this.addToMyDirectoryToolStripMenuItem});
             this.callHistoryContextMenu.Name = "callHistoryContextMenu";
-            this.callHistoryContextMenu.Size = new System.Drawing.Size(182, 70);
+            this.callHistoryContextMenu.Size = new System.Drawing.Size(182, 48);
             this.callHistoryContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.callHistoryContextMenu_Opening);
             // 
             // callToolStripMenuItem
@@ -329,11 +330,20 @@
             this.connectionStateLbl.Size = new System.Drawing.Size(118, 17);
             this.connectionStateLbl.Text = "toolStripStatusLabel1";
             // 
+            // toolStrip3
+            // 
+            this.toolStrip3.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(469, 25);
+            this.toolStrip3.TabIndex = 3;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
             // AstTray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 345);
+            this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "AstTray";
@@ -390,6 +400,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox myDirectoryFitlerTxt;
+        private System.Windows.Forms.ToolStrip toolStrip3;
     }
 }
 

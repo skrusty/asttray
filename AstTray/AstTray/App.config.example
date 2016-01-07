@@ -12,17 +12,19 @@
     <add key="astPass" value=""/>
 
     <!-- The extension number assigned to this user -->
-    <add key="astExten" value="100"/>
+    <add key="astExten" value=""/>
     <!-- The peer type, i.e. SIP, IAX -->
     <add key="astPeerType" value="SIP"/>
     <!-- The peer id, this could be different to the extension number -->
-    <add key="astPeerID" value="100"/>
+    <add key="astPeerID" value=""/>
+    <!-- The context you wish the outbound call to be made from (e.g. sip-out) -->
+    <add key="astExtenContext" value=""/>
 
     <!-- Directory Information-->
     <!-- Path for local directory, leave blank to use local path -->
     <add key="myDirectoryPath" value="local.xml"/>
-    <!-- URL to shared directory XML -->
-    <add key="sharedDirectoryPath" value="http://www.mywebsite.co.uk/company.xml"/>
+    <!-- URL to shared directory XML (http://www.mywebsite.co.uk/company.xml)-->
+    <add key="sharedDirectoryPath" value=""/>
     <!-- Type of shared directory XML (Current Options: CiscoDirectory, AstTray) -->
     <add key="sharedDirectoryType" value="CiscoDirectory"/>
     
@@ -30,7 +32,10 @@
     <!--  Arguments: 
             {callerid-number}    CallerID Number of the inbound call
             {callerid-name}      CallerID Name of the inbound call
+            
+          E.g. 
+          http://crm.mywebste.co.uk/pop?clid={callerid-number}
     -->
-    <add key="ScreenPopPath" value="http://crm.mywebste.co.uk/pop?clid={callerid-number}"></add>
+    <add key="ScreenPopPath" value=""></add>
   </appSettings>
 </configuration>
