@@ -13,7 +13,7 @@ This is a list of the features I am adding at the moment: -
 ** XML file store, but also supports Cisco Directory XML from web resource
 
 ## Dependencies
-http://asternet.codeplex.com/ AsterNet - Based on Asterisk.NET
+https://github.com/skrusty/AsterNET AsterNet - Based on Asterisk.NET
 
 For more information, see http://www.xdev.net or follow me @benjmerrills
 
