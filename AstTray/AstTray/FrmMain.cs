@@ -129,7 +129,7 @@ namespace AstTray
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("http://asttray.codeplex.com");
+            Process.Start("https://github.com/skrusty/asttray/issues");
         }
 
         private void sharedDirectoryListView_DoubleClick(object sender, EventArgs e)
