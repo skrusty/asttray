@@ -5,10 +5,10 @@ AstTray requires each user have their own manager login. Configuration is handle
 
 ## The Future
 This is a list of the features I am adding at the moment: -
-* Screen Popping
+* Screen Popping (Done)
 * Local Directory
 * Call History
- * Made, Received and Missed
+ * Made (Done), Received (Done) and Missed
 * Shared or Company Directory
 ** XML file store, but also supports Cisco Directory XML from web resource
 
