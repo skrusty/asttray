@@ -8,6 +8,8 @@ Skrusty		07/01/2016
 	Change	Updated config example to include default context and removed Url's that caused errors
 	Fixed	Usage of ConnectedLineNumber etc that caused crash on originate and inbound call
 	Fixed	Location of issue tracker (moved to github)
+	Fixed	Call history now updated for outbound calls
+	Fixed	Context menu 'Redial' now redials the number
 
 Skrusty		23/11/2014
 	Added	AsterNET via nuget package (1.0.0)

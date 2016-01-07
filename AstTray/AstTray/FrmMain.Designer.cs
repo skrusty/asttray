@@ -162,7 +162,7 @@
             this.callToolStripMenuItem,
             this.addToMyDirectoryToolStripMenuItem});
             this.callHistoryContextMenu.Name = "callHistoryContextMenu";
-            this.callHistoryContextMenu.Size = new System.Drawing.Size(182, 48);
+            this.callHistoryContextMenu.Size = new System.Drawing.Size(182, 70);
             this.callHistoryContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.callHistoryContextMenu_Opening);
             // 
             // callToolStripMenuItem
@@ -170,6 +170,7 @@
             this.callToolStripMenuItem.Name = "callToolStripMenuItem";
             this.callToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.callToolStripMenuItem.Text = "Redial";
+            this.callToolStripMenuItem.Click += new System.EventHandler(this.callToolStripMenuItem_Click);
             // 
             // addToMyDirectoryToolStripMenuItem
             // 

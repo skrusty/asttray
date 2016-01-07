@@ -181,10 +181,17 @@ namespace AstTray
                     Timeout = 30000,
                     Async = true
                 });
+
+                LogCall(numberToCall, "Outbound");
             }
             catch
             {
             }
+        }
+
+        private void LogCall(string numberCalled, string type)
+        {
+            callHistoryListView.Items.Add(new ListViewItem(new[] {numberCalled, DateTime.Now.ToString("ddd HH:mm:ss"), type}));
         }
 
         #endregion
@@ -207,6 +214,7 @@ namespace AstTray
                         .StartsWith(ConfigurationManager.AppSettings["astPeerType"] + "/" +
                                     ConfigurationManager.AppSettings["astPeerID"]))
                 {
+                    // TODO: This could be the result of our Originate! If so, we don't want to do anything... or do we?
                     // this event related to me
                     switch (e.ChannelStateDesc.ToLower())
                     {
@@ -256,5 +264,10 @@ namespace AstTray
         }
 
         #endregion
+
+        private void callToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialNumber(callHistoryListView.SelectedItems[0].SubItems[0].Text);
+        }
     }
 }
